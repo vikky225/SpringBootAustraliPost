@@ -1,0 +1,42 @@
+spring.jmx:
+  enabled: false
+
+spring.datasource:
+  driverClassName: org.h2.Driver
+  url: jdbc:h2:mem:customercrud;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+
+server:
+  port: 8080
+
+management:
+  port: 8081
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    data: classpath*:postcodes.sql
+
+spring.jpa:
+  hibernate.ddl-auto: create-drop
+
+postcode.service:
+  name: 'Default profile'
+
+project:
+  name: australia-postcode-lookup-api
+  version: ${project.version}
+  description: boot-example default description
+info:
+  build:
+    artifact: ${project.artifactId}
+    name: ${project.name}
+    description: ${project.description}
+    version: ${project.version}
